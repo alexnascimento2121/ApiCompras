@@ -36,8 +36,7 @@ public class Producer {
     public void sendOrder(Order order) {        
         try {
         	rabbitTemplate.convertAndSend(queue.getName(), mapper.writeValueAsString(order));
-			System.out.printf("msg enviada " +queue.getName(), order);
-		} catch (JsonProcessingException e) {
+        } catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}        
