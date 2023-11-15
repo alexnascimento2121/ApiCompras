@@ -79,10 +79,10 @@ public class OrderServiceTest {
     @DisplayName("Deve excluir o pedido com sucesso")
     @Test
     void deveExcluirPedidoComSucesso() {
-        var orderMok = mock.getOrderSalvo();
+        var pedidoMok = mock.getOrderSalvo();
         var id = 1L;
 
-        Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(orderMok));
+        Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(pedidoMok));
         Mockito.doNothing().when(orderRepository).deleteById(id);
 
         orderService.delete(id);

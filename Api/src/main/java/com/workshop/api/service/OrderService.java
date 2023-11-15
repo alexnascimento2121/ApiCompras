@@ -8,13 +8,16 @@ import com.workshop.api.repository.OrderRepository;
 import com.workshop.api.service.exception.EntityNotFoundException;
 import com.workshop.api.service.rabbitmq.Producer;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Service
 public class OrderService {
-	@Autowired
-	private OrderRepository orderRepository;
 	
-	@Autowired
-	private Producer producer;
+	private final OrderRepository orderRepository;
+	
+	
+	private final Producer producer;
 
    	
 	public Order saveOrder(Order order){	
