@@ -67,7 +67,6 @@ public class OrderControllerTest {
                 .andExpect(status().isOk());
         
         Order orderSalvo = orderService.searchOrFailById(id);
-
         assertEquals(orderSalvo.getId(), id);
         assertNotNull(orderSalvo);
 
