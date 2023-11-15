@@ -6,25 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.workshop.api.model.Order;
 
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 
-/* para teste
-@RequestMapping("/producer")
-@RestController*/
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Service
 public class Producer {
-	@Autowired
-    private RabbitTemplate rabbitTemplate;
 
-    @Autowired
-    private Queue queue;
-    
-    @Autowired
-    private ObjectMapper mapper;
+	private final RabbitTemplate rabbitTemplate;   
+	private final Queue queue;  
+
+	private final ObjectMapper mapper;
     
    /* @PostMapping teste
     public void producer(@RequestBody String payload) {
@@ -33,12 +28,7 @@ public class Producer {
     
     @SneakyThrows
     @PostMapping
-    public void sendOrder(Order order) {        
-        try {
+    public void sendOrder(Order order) { 
         	rabbitTemplate.convertAndSend(queue.getName(), mapper.writeValueAsString(order));
-        } catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}        
     }
 }

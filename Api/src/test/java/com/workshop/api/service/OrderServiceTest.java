@@ -54,7 +54,8 @@ public class OrderServiceTest {
         var id = 1L;
 
         Throwable exception = assertThrows(BusinessException.class, () -> {
-            Order orderSalvo = orderService.searchOrFailById(id);
+            @SuppressWarnings("unused")
+			Order orderSalvo = orderService.searchOrFailById(id);
         });
 
         assertEquals("O pedido de id: " + id + " nao existe na base de dados!", exception.getMessage());
