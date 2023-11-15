@@ -65,7 +65,7 @@ public class OrderServiceTest {
     @Test
     void deveBuscarPedidoComSucesso() {
         var orderMok = mock.getOrderSalvo();
-        var id = 1L;
+        var id = 2L;
 
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(orderMok));
 
@@ -81,7 +81,7 @@ public class OrderServiceTest {
     @Test
     void deveExcluirPedidoComSucesso() {
         var pedidoMok = mock.getOrderSalvo();
-        var id = 1L;
+        var id = 2L;
 
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(pedidoMok));
         Mockito.doNothing().when(orderRepository).deleteById(id);
@@ -93,7 +93,7 @@ public class OrderServiceTest {
     @DisplayName("Deve falhar ao excluir o pedido que nao existe")
     @Test
     void deveFalharAoEXcluirPedidoNaoExistente() {
-        var id = 1L;
+        var id = 2L;
 
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.empty());
 
