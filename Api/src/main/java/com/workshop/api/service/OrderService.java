@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.workshop.api.model.Order;
 import com.workshop.api.repository.OrderRepository;
-import com.workshop.api.service.exception.BusinessException;
+import com.workshop.api.service.exception.EntityNotFoundException;
 import com.workshop.api.service.rabbitmq.Producer;
 
 @Service
@@ -27,7 +27,7 @@ public class OrderService {
 	// metodo para teste do mockito com expressao lambda
 	 public Order searchOrFailById(Long id) {
 	        return orderRepository.findById(id)
-	                .orElseThrow(()-> new BusinessException("O pedido de id: " + id + " nao existe na base de dados!"));
+	        		.orElseThrow(()-> new EntityNotFoundException("O pedido de id: " + id + " nao existe na base de dados!"));
 	    }
 	 
 	 public void delete(Long id) {
