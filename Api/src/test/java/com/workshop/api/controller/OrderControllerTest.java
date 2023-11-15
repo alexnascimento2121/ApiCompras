@@ -74,7 +74,7 @@ public class OrderControllerTest {
     @DisplayName("GET - Deve buscar o pedido com sucesso na base de dados")
     @Test
     void deveBuscarPedidoComSucesso() throws Exception {
-        var id = 1L;
+        var id = 2L;
 
         mockMvc.perform(get(ROTA_ORDER.concat("/" + id)))
                 .andDo(print())
@@ -94,7 +94,7 @@ public class OrderControllerTest {
     @DisplayName("DELETE - Deve excluir um pedido com sucesso")
     @Test
     void deveExcluirUmPedidoComSucesso() throws Exception {
-        var id = 1L;
+        var id = 2L;
 
         mockMvc.perform(delete(ROTA_ORDER.concat("/" + id)))
                 .andDo(print())
