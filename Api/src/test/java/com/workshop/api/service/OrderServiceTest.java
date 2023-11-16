@@ -51,7 +51,7 @@ public class OrderServiceTest {
     @DisplayName("Deve falhar na busca de pedido que nao existe")
     @Test
     void deveFalharNaBuscaDePedidoNaoExistente() {
-        var id = 4L;
+        var id = 1L;
 
         Throwable exception = assertThrows(BusinessException.class, () -> {
             @SuppressWarnings("unused")
@@ -65,7 +65,7 @@ public class OrderServiceTest {
     @Test
     void deveBuscarPedidoComSucesso() {
         var orderMok = mock.getOrderSalvo();
-        var id = 3L;
+        var id = 1L;
 
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(orderMok));
 
@@ -75,15 +75,12 @@ public class OrderServiceTest {
         assertNotNull(orderSalvo);
         Mockito.verify(orderRepository, Mockito.atLeastOnce()).findById(id);
     }
-    
-    
-    //teste
-    
+        
     @DisplayName("Deve excluir o pedido com sucesso")
     @Test
     void deveExcluirPedidoComSucesso() {
         var pedidoMok = mock.getOrderSalvo();
-        var id = 3L;
+        var id = 1L;
 
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(pedidoMok));
         Mockito.doNothing().when(orderRepository).deleteById(id);
@@ -95,7 +92,7 @@ public class OrderServiceTest {
     @DisplayName("Deve falhar ao excluir o pedido que nao existe")
     @Test
     void deveFalharAoEXcluirPedidoNaoExistente() {
-        var id = 4L;
+        var id = 1L;
 
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.empty());
 

@@ -7,8 +7,7 @@ import com.workshop.api.model.Order;
 
 public class DadosMok {
 	public Order getOrder() {
-        return Order.builder()
-        		.id(2L)
+        return Order.builder()        		
                 .name("alex nascimento")
                 .product(1L)
                 .price(BigDecimal.TEN)
@@ -21,7 +20,7 @@ public class DadosMok {
 	
 	public Order getOrderSalvo() {
         return Order.builder()
-                .id(3L)
+                .id(1L)
                 .name("alex nascimento")
                 .product(1L)
                 .price(BigDecimal.TEN)
