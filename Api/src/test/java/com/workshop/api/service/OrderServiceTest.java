@@ -76,6 +76,9 @@ public class OrderServiceTest {
         Mockito.verify(orderRepository, Mockito.atLeastOnce()).findById(id);
     }
     
+    
+    //teste
+    
     @DisplayName("Deve excluir o pedido com sucesso")
     @Test
     void deveExcluirPedidoComSucesso() {
