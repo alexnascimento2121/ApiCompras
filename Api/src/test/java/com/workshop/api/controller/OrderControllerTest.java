@@ -55,7 +55,7 @@ public class OrderControllerTest {
     @Test
     void deveCadastrarPedidoComSucesso() throws Exception {
         var pedidoBody = dadosMok.getOrder();
-        var id = 1L;
+        var id = 3L;
         
         Mockito.doNothing().when(producer).sendOrder(Mockito.any(Order.class));
 
