@@ -68,3 +68,4 @@ jobs:
           version_label: latest-${{github.sha}}
           region: us-east-1
           deployment_package: app.war
+
