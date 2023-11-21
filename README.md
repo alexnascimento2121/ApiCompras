@@ -4,3 +4,7 @@
 Para usar com docker, basta trocar os nome e senha dentro application para de sua preferencia.
 Deve se buildar o arquivo DockerFile com comando docker build .
 Por fim, para rodar o projeto com docker e rabbitmq deve rodar o comando:docker-compose up --build backend
+
+
+Para consultar o serviço de compras/pedido
+http://app-spring-boot-env-3.eba-hnhhhsmg.us-east-1.elasticbeanstalk.com/api/order/1
